@@ -20,14 +20,14 @@ public class Ventilador {
         }
     }
     void girar(){
-        if (!estaLigado && !estaGirando){
+        if (estaLigado == true && estaGirando == false){
             System.out.println("O ventilador está girando...");
             estaLigado = true;
         }else{
             System.out.println("O ventilador já está girando!");
         }
     }
-    void paradeGirar(){
+    void parardeGirar(){
         if (estaGirando){
             System.out.println("O ventilador está parando de girar...");
             estaLigado = false;
