@@ -50,14 +50,16 @@ public class Moto {
         }
 
         void andar() {
-            if (!estaLigada && qtdPass < 0) {
+            if (estaLigada == false && qtdPass < 1) {
+                System.out.println("A moto está deligada!");
+
+            } else if (qtdGas < 1){
+                System.out.println("Impossível andar sem galosina!");
+            } else {
                 qtdGas -= 1;
                 System.out.println("Andando 1km...");
-
-            } else {
-                System.out.println("A moto está deligada!");
             }
-            estaLigada = false;
+
         }
 
         void abastecer() {
@@ -65,7 +67,7 @@ public class Moto {
                 System.out.println("O tanque já está cheio!");
             } else {
                 qtdGas += 1;
-                System.out.println("+1L");
+                System.out.println("+1 litro de gasolina!");
             }
         }
 
