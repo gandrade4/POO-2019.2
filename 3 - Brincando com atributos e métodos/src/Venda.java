@@ -12,7 +12,7 @@ public class Venda {
 
     }
     void consultarInfos(){
-        
+
     }
 
 }
