@@ -3,7 +3,6 @@ package Ventilador;
 public class Ventilador {
     boolean estaLigado;
     int velocidade;
-    int velocidadeMax = 4;
     boolean estaGirando;
 
     void ligar(){
@@ -20,14 +19,17 @@ public class Ventilador {
         }else{
             System.out.println("Desligando o ventilador...");
             estaLigado = false;
+            estaGirando = false;
         }
     }
     void girar(){
-        if (estaLigado == true && estaGirando == false){
+        if (estaLigado == true && velocidade >= 1 && estaGirando == false){
             System.out.println("O ventilador está girando...");
             estaGirando = true;
-        }else{
+        }else if (estaLigado == true && estaGirando == true){
             System.out.println("O ventilador já está girando!");
+        }else {
+            System.out.println("Ventilador desligado ou na velocidade 0. FIX IT!\nDê um *show* para descobrir!");
         }
     }
     void parardeGirar(){
@@ -38,21 +40,20 @@ public class Ventilador {
             System.out.println("O ventilador já não estava girando!");
         }
     }
-    void selecionarVelocidade(int qtd){
-        if(estaLigado == true && velocidade >= velocidadeMax){
-            System.out.println("O ventilador já atingiu sua velocidade máxima!");
-        } else if (estaLigado == true && velocidade <= velocidadeMax){
-            System.out.println("+" + qtd + " de velocidade.");
-            velocidade += qtd;
-        } else if (estaLigado == true && velocidade == 1) {
-            System.out.println("O ventilador está na velocidade mínima!");
-        } else if (estaLigado == true && velocidade <= velocidadeMax){
-            System.out.println("-" + qtd + "de velocidade.");
-            velocidade -= qtd;
+    void selecionarVelocidade(int n){
+        if (estaLigado == true){
+            if (n > 4 || n < 0){
+                System.out.println("Velocidade inadequada, você está forçando!");
+            } else{
+                velocidade = n;
+                System.out.println("O ventilado está na velocidade: " + n);
+            }
         } else{
-            System.out.println("O ventilado está desligado da tomada!");
-
+            System.out.println("Ventilador desligado, ligue-o primeiro!");
         }
+
+
+
     }
     void showStatus(){
         System.out.println("Na tomada: " + estaLigado + "\nVelocidade: " + velocidade + "\nGirando: " + estaGirando);
