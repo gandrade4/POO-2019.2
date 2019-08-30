@@ -3,6 +3,7 @@ package Ventilador;
 public class Ventilador {
     boolean estaLigado;
     int velocidade;
+    int velocidadeMax = 4;
     boolean estaGirando;
 
     void ligar(){
@@ -14,7 +15,7 @@ public class Ventilador {
         }
     }
     void desligar(){
-        if (estaLigado == true){
+        if (estaLigado == false){
             System.out.println("O ventilador já está desligado!");
         }else{
             System.out.println("Desligando o ventilador...");
@@ -30,31 +31,31 @@ public class Ventilador {
         }
     }
     void parardeGirar(){
-        if (estaLigado == true && estaGirando == true){
+        if (estaGirando == true){
             System.out.println("O ventilador está parando de girar...");
             estaGirando = false;
         }else{
             System.out.println("O ventilador já não estava girando!");
         }
     }
-    void aumentarVelocidade(){
-        if(velocidade == 4){
-            System.out.println("O ventilador atingiu sua velocidade máxima!");
-        }else{
-            System.out.println("+1 de velocidade ");
-            velocidade += 1;
-        }
-    }
-    void diminuirVelocidade(){
-        if(velocidade == 1){
+    void selecionarVelocidade(int qtd){
+        if(estaLigado == true && velocidade >= velocidadeMax){
+            System.out.println("O ventilador já atingiu sua velocidade máxima!");
+        } else if (estaLigado == true && velocidade <= velocidadeMax){
+            System.out.println("+" + qtd + " de velocidade.");
+            velocidade += qtd;
+        } else if (estaLigado == true && velocidade == 1) {
             System.out.println("O ventilador está na velocidade mínima!");
-        }else{
-            System.out.println("-1 de velocidade ");
-            velocidade -= 1;
+        } else if (estaLigado == true && velocidade <= velocidadeMax){
+            System.out.println("-" + qtd + "de velocidade.");
+            velocidade -= qtd;
+        } else{
+            System.out.println("O ventilado está desligado da tomada!");
+
         }
     }
     void showStatus(){
-        System.out.println("Na tomada: " + estaGirando + "\nVelocidade: " + velocidade + "\nGirando: " + estaGirando);
+        System.out.println("Na tomada: " + estaLigado + "\nVelocidade: " + velocidade + "\nGirando: " + estaGirando);
     }
 
 
