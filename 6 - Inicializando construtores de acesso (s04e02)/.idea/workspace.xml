@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed248322-41ae-488c-ba92-d6a4a63eedfc" name="Default Changelist" comment="" />
+    <list default="true" id="bb3bc0ca-eb6d-4a9c-b8f1-a8c8dc4b7c09" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,20 +11,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ventilador/Controller.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/s04e02/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+            <state relative-caret-position="85">
+              <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Ventilador/Ventilador.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/s04e02/Carro.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="46" column="19" lean-forward="true" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+            <state relative-caret-position="306">
+              <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/s04e02/Motor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="e#87#88#0" expanded="true" />
+                <element signature="e#127#128#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -41,10 +54,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Controller.java" />
-        <option value="$PROJECT_DIR$/src/Ventilador.java" />
-        <option value="$PROJECT_DIR$/src/Ventilador/Ventilador.java" />
-        <option value="$PROJECT_DIR$/src/Ventilador/Controller.java" />
+        <option value="$PROJECT_DIR$/src/s04e02/Motor.java" />
+        <option value="$PROJECT_DIR$/src/s04e02/Controller.java" />
+        <option value="$PROJECT_DIR$/src/s04e02/Carro.java" />
       </list>
     </option>
   </component>
@@ -58,29 +70,29 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="4 - Ventilador" type="b2602c69:ProjectViewProjectNode" />
-              <item name="4 - Ventilador" type="462c0819:PsiDirectoryNode" />
+              <item name="6 - Inicializando construtores de acesso (s04e02)" type="b2602c69:ProjectViewProjectNode" />
+              <item name="6 - Inicializando construtores de acesso (s04e02)" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="4 - Ventilador" type="b2602c69:ProjectViewProjectNode" />
-              <item name="4 - Ventilador" type="462c0819:PsiDirectoryNode" />
+              <item name="6 - Inicializando construtores de acesso (s04e02)" type="b2602c69:ProjectViewProjectNode" />
+              <item name="6 - Inicializando construtores de acesso (s04e02)" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="4 - Ventilador" type="b2602c69:ProjectViewProjectNode" />
-              <item name="4 - Ventilador" type="462c0819:PsiDirectoryNode" />
+              <item name="6 - Inicializando construtores de acesso (s04e02)" type="b2602c69:ProjectViewProjectNode" />
+              <item name="6 - Inicializando construtores de acesso (s04e02)" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Ventilador" type="462c0819:PsiDirectoryNode" />
+              <item name="s04e02" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -104,17 +116,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Controller">
+  <component name="RunManager">
     <configuration name="Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Ventilador.Controller" />
-      <module name="4 - Ventilador" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Ventilador" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Ventilador.Ventilador" />
-      <module name="4 - Ventilador" />
+      <option name="MAIN_CLASS_NAME" value="s04e02.Controller" />
+      <module name="6 - Inicializando construtores de acesso (s04e02)" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -122,49 +127,44 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Controller" />
-        <item itemvalue="Application.Ventilador" />
       </list>
     </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ed248322-41ae-488c-ba92-d6a4a63eedfc" name="Default Changelist" comment="" />
-      <created>1566482336293</created>
+      <changelist id="bb3bc0ca-eb6d-4a9c-b8f1-a8c8dc4b7c09" name="Default Changelist" comment="" />
+      <created>1567175675904</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1566482336293</updated>
-      <workItem from="1566482340120" duration="4366000" />
-      <workItem from="1566567370991" duration="355000" />
-      <workItem from="1566943704723" duration="2703000" />
-      <workItem from="1567052277641" duration="1789000" />
-      <workItem from="1567087680751" duration="3905000" />
-      <workItem from="1567127821694" duration="8087000" />
-      <workItem from="1567175444877" duration="53000" />
+      <updated>1567175675904</updated>
+      <workItem from="1567175682638" duration="554000" />
+      <workItem from="1567176824428" duration="642000" />
+      <workItem from="1567655596772" duration="1893000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21258000" />
+    <option name="totallyTimeSpent" value="3089000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="4" visible="true" weight="0.15128593" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25718608" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32569557" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3289689" />
@@ -180,17 +180,29 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Ventilador/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/s04e02.java" />
+    <entry file="file://$PROJECT_DIR$/src/s04e02/Motor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#87#88#0" expanded="true" />
+            <element signature="e#127#128#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ventilador/Ventilador.java">
+    <entry file="file://$PROJECT_DIR$/src/s04e02/Carro.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="46" column="19" lean-forward="true" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+        <state relative-caret-position="306">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/s04e02/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
         </state>
       </provider>
     </entry>

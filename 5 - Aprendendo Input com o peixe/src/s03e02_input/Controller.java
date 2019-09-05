@@ -6,12 +6,13 @@ class Peixe{
 
     int barriga = 0;
     int maxBarriga = 5;
+    boolean estaVivo = true;
 
     public String toString(){
         return "[" + this.barriga + "]";
     }
     void alimentar(int qtd){ //aumenta a quantidade de comida na barriga até o máximo
-        if (barriga == maxBarriga){
+        if (barriga >= maxBarriga){
             System.out.println("O peixinho está MUITO alimentado!");
 
         }else{
@@ -19,17 +20,16 @@ class Peixe{
             System.out.println("+" + qtd + ": Alimentando o peixinho...");
         }
     }
-    void passarTempo(){ //diminui a quantidade comida, 1 por vez, até 0
+    void passarTempo(int qtd){ //diminui a quantidade comida, 1 por vez, até 0
         if (barriga == 0){
-            System.out.println("morrendo");
+            System.out.println("Peixinho morreu");
+            estaVivo = false;
         }else{
-            barriga -= 1;
+            barriga -= qtd;
             System.out.println("Desopilando...");
         }
     }
-    void show(){
-        System.out.println("Vivo com a barriga: " + barriga);
-    }
+
 }
 
 public class Controller {
