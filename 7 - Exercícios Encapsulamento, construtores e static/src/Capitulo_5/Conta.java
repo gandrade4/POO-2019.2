@@ -15,6 +15,7 @@ public class Conta {
         nextId += 1;
         //this.totalDeContas = totalDeContas;
     }
+    //Questão 04:
     public Conta(){
 
     }
@@ -45,7 +46,7 @@ public class Conta {
         if (titular != null){
             if(valor <= getSaldo()){
                 System.out.println("Sacando R$" + valor + "...");
-                this.saldo = this.saldo - valor;
+                setSaldo(getSaldo() - valor);
             } else{
                 System.out.println("Você não tem saldo suficiente para sacar esse valor!");
             }
@@ -57,7 +58,7 @@ public class Conta {
     void depositar(double valor){
         if (titular != null){
             System.out.println("Depositando R$" + valor + "...");
-            this.saldo = this.saldo + valor;
+            setSaldo(getSaldo() + valor);
         } else {
             System.out.println("Para depositar, você precisa inicializar sua conta primeiro!");
         }
