@@ -19,8 +19,8 @@ public class Conta {
 
     }
     public String toString(){
-        return "[" + this.titular + "]" +
-               "\nNúmero da conta: " + this.id + "\nSaldo: R$" + this.saldo;
+        return "[" + getTitular() + "]" +
+               "\nNúmero da conta: " + this.id + "\nSaldo: R$" + getSaldo();
     }
 
     //Questão 2:
@@ -32,12 +32,10 @@ public class Conta {
         return titular;
     }
 
+    public double getSaldo() { return saldo; }
+
     public void setSaldo(double saldo) {
         this.saldo = saldo;
-    }
-
-    public int getIdentificador() {
-        return id;
     }
 
     void getRedimento(){
@@ -45,7 +43,7 @@ public class Conta {
     }
     void sacar(double valor){
         if (titular != null){
-            if(valor <= this.saldo){
+            if(valor <= getSaldo()){
                 System.out.println("Sacando R$" + valor + "...");
                 this.saldo = this.saldo - valor;
             } else{
@@ -65,6 +63,7 @@ public class Conta {
         }
     }
 
+    /* Não consegui fazer isso funcionar:
     void tranferir(int id, double valor){
         if (titular != null){
             if(valor <= this.saldo){
@@ -80,4 +79,5 @@ public class Conta {
     void receber(double valor){
         this.saldo = valor;
     }
+    */
 }

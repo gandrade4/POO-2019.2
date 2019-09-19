@@ -12,11 +12,21 @@ public class Pet {
         this.saude = saude;
         this.saudeMax = saude;
         this.estomago = estomago;
-        coracao = new Coracao(10);
-        coracao.vida = saude;
+        coracao = new Coracao(0);
+
     }
     public  Pet(){
 
+    }
+
+    @Override
+    public String toString() {
+        return "Pet{" +
+                "Nome = '" + nome + '\'' +
+                ", Saúde = " + saude +
+                ", Cap. Estômago = " + estomago +
+                ", Vida = " + coracao.vida +
+                '}';
     }
 
     public int getSaude() {
@@ -27,17 +37,28 @@ public class Pet {
         this.saude = saude;
     }
 
-    public void comer(int valor){
-        if (coracao.vida != 0){
+    public void comer(double valor) {
+        /*if (coracao.vida != 0){
             System.out.println("Comendo..");
             estomago += valor;
-            saude += valor;
-            if (estomago > valor){
-                saude -= valor;
+            saude += valor / 2;
+            if (valor > estomago){
+                saude -= valor / 2;
                 System.out.println("Pet empasinado");
             }
         } else{
             System.out.println("Sem vida!");
+        }*/
+        if (valor > estomago) {
+            saude -= valor / 2;
+            System.out.println("Pet empasinado");
+            if (coracao.vida <= 0) {
+                System.out.println("sem vida");
+            }
+        } else {
+            System.out.println("Comendo..");
+            estomago += valor;
+            saude += valor / 2;
         }
     }
 }

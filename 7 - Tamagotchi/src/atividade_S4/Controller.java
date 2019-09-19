@@ -6,7 +6,7 @@ public class Controller {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Pet pet = new Pet();
-        System.out.println("end, iniciar _nome _saude _estomago _vida");
+        System.out.println("fim, iniciar _nome _saude _estomago _vida, come _qtd");
         while (true){
             String line = scanner.nextLine();
             String[] ui = line.split(" ");
@@ -17,6 +17,8 @@ public class Controller {
                 System.out.println("Pet criado!");
             } else if (ui[0].equals("come")){
                 pet.comer(Integer.parseInt(ui[1]));
+            } else if (ui[0].equals("show")) {
+                System.out.println(pet);
             } else{
                 System.out.println("Comando inválido");
             }
