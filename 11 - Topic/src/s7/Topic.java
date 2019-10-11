@@ -24,31 +24,31 @@ public class Topic {
         }return mostrar += " ]";
     }
 
-    public boolean inserir(Passageiro pass){
-        if (pass.preferencial()){
-            for (int i = 0; i < qtdPreferenciais; i++){
-                if (poltronas.get(i) == null){
+    public void inserir(Passageiro pass) {
+        if (pass.preferencial()) {
+            for (int i = 0; i < qtdPreferenciais; i++) {
+                if (poltronas.get(i) == null) {
                     poltronas.set(i, pass);
-                    return true;
+                    return;
                 }
             }
             for (int i = qtdPreferenciais; i < poltronas.size(); i++) {
                 if (poltronas.get(i) == null) {
                     poltronas.set(i, pass);
-                    return true;
+                    return;
                 }
             }
-        }else {
+        } else {
             for (int i = qtdPreferenciais; i < poltronas.size(); i++) {
                 if (poltronas.get(i) == null) {
                     poltronas.set(i, pass);
-                    return true;
+                    return;
                 }
             }
-            for (int i = 0; i < qtdPreferenciais; i++){
-                if (poltronas.get(i) == null){
+            for (int i = 0; i < qtdPreferenciais; i++) {
+                if (poltronas.get(i) == null) {
                     poltronas.set(i, pass);
-                    return true;
+                    return;
                 }
             }
         }
