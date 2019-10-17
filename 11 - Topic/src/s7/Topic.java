@@ -16,9 +16,12 @@ public class Topic {
         String mostrar = "[";
         for (int i = 0; i < poltronas.size(); i++) {
             if (i < qtdPreferenciais) {
-                mostrar += "@ ";
+                mostrar += " @";
             } else {
-                mostrar += "= ";
+                mostrar += " =";
+            }
+            if (poltronas.get(i) != null){
+                mostrar += poltronas.get(i);
             }
 
         }return mostrar += " ]";
@@ -52,5 +55,16 @@ public class Topic {
                 }
             }
         }
+    }
+    public boolean remover (String id){
+        for (int i = 0; i < poltronas.size(); i++){
+            if (poltronas.get(i) != null){
+                if (poltronas.get(i).nome.equals(id)){
+                    poltronas.set(i, null);
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
