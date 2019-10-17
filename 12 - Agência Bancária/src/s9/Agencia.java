@@ -13,7 +13,7 @@ public class Agencia {
         this.nextid = 0;
     }
 
-    boolean addCliente(String idCliente){
+    public boolean addCliente(String idCliente){
         for (int i = 0; i < clientes.size(); i++){
             if (clientes.get(i).id.equals(idCliente)){
                 return false;
@@ -31,4 +31,8 @@ public class Agencia {
         this.clientes.add(cliente);
         return true;
     }
+
+
+
+
 }
