@@ -6,13 +6,21 @@ public class Cliente {
     private String key;
     private String nome;
     private double saldo;
-    Map<String, Transacao> mapa = new TreeMap<>();
+    Repositorio<Transacao> transacoes;
 
     public Cliente(String key, String nome) {
         super();
         this.key = key;
         this.nome = nome;
-        this.transacoes = new ArrayList<>();
+        this.saldo = 0;
+    }
+
+    public Cliente(String s) {
+
+    }
+
+    public String toString(){
+        return this.getKey() + ":" + this.getNome() + ":" + this.getSaldo();
     }
 
     public double getSaldo() {
