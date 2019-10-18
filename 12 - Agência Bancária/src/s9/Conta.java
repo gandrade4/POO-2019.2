@@ -39,7 +39,8 @@ abstract class Conta {
     public void depositar( double valor){
         this.setSaldo(getSaldo() + valor);
     }
-    public void sacar(double valor){
+
+    public void sacar(int valor){
         if (this.getSaldo() >= valor){
             System.out.println("Sacando R$" + valor + "...");
             this.setSaldo(getSaldo() - valor);

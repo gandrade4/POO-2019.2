@@ -15,10 +15,14 @@ public class Controller {
                 break;
             } else if (ui[0].equals("addcliente")){
                 bank.addCliente(ui[1]);
-            } else if (ui[0].equals("sacar")){
-                int id = bank.contas.get(id).sacar(ui[1], ui[2]);
+            } else if (ui[0].equals("sacar")){//idConta valor
+                Conta conta = bank.getConta(ui[1]);
+                conta.sacar(Integer.parseInt(ui[2])); // criar método na agencia que percorra as minhas contas e ache a correta
             } else if (ui[0].equals("depositar")){
-                int id = bank.contas.get(id).depositar(ui[1]);
+                Conta conta = bank.getConta(ui[1]);
+                conta.depositar(Integer.parseInt(ui[2]));
+            } else if (ui[0].equals("status")){
+                System.out.println(bank.contas);
             }
         }
     }

@@ -32,7 +32,7 @@ public class Agencia {
         return true;
     }
 
-
-
-
+    public Conta getConta(String s) {
+        return null;
+    }
 }
