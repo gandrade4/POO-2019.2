@@ -9,7 +9,7 @@ abstract class Conta {
     abstract void update();
 
     public  String toString(){
-        return this.id + ":" + this.cliente + ":" + this.saldo + ":" + this.getTipo();
+        return this.id + " : " + this.cliente + " : " + this.saldo + " : " + this.getTipo();
     }
 
     public int getId() {

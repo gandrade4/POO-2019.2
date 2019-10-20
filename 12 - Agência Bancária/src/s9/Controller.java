@@ -15,6 +15,7 @@ public class Controller {
                 break;
             } else if (ui[0].equals("addcliente")){
                 bank.addCliente(ui[1]);
+                System.out.println("Cliente adicionado com sucesso!");
             } else if (ui[0].equals("sacar")){//idConta valor
                 Conta conta = bank.getConta(ui[1]);
                 conta.sacar(Integer.parseInt(ui[2])); // criar método na agencia que percorra as minhas contas e ache a correta

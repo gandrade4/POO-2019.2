@@ -5,9 +5,8 @@ public class ContaPoupanca extends Conta {
 
     }
 
-    @Override
     String getTipo() {
-        return null;
+        return "CP";
     }
 
     @Override

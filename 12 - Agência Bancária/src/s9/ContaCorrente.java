@@ -1,7 +1,6 @@
 package s9;
 
 class ContaCorrente extends Conta {
-
     public ContaCorrente(int nextid, Cliente cliente) {
 
     }
