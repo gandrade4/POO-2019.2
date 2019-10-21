@@ -1,7 +1,53 @@
 package s9;
 
 class ContaCorrente extends Conta {
-    public ContaCorrente(int nextid, Cliente cliente) {
+
+    private float tarifaMensal;
+    public ContaCorrente(){ }
+    public ContaCorrente(int id, String nomeCli){
+        this.tarifaMensal = 20;
+    }
+
+    public void atualizacaoMensal(){
+        this.saldo -= this.tarifaMensal;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
+    public ContaCorrente(String nextid, String cliente) {
 
     }
 
@@ -11,5 +57,5 @@ class ContaCorrente extends Conta {
 
     void update() {
         this.saldo -= 20;
-    }
+    }*/
 }

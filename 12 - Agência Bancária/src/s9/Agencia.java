@@ -1,9 +1,41 @@
 package s9;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Agencia {
+    List<Conta> contas;
+    List<Cliente> clientes;
+
+    public ()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
     List<Conta> contas;
     List<Cliente> clientes;
     int nextid;
@@ -36,5 +68,5 @@ public class Agencia {
 
     public Conta getConta(String s) {
         return null;
-    }
+    }*/
 }

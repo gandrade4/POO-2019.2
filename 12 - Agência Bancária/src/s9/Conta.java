@@ -1,6 +1,57 @@
 package s9;
 
 abstract class Conta {
+    protected int id;
+    protected float saldo;
+    protected String nomeCli;
+    protected String tipoConta;
+
+    public Conta(){ }
+    public Conta(int id, String nomeCli){
+    }
+    public void sacar(){
+
+    }
+    public void depositar(){
+
+    }
+    public void tranferir(){
+
+    }
+    public abstract void update(){
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
     int id;
     double saldo;
     Cliente cliente;
@@ -9,7 +60,7 @@ abstract class Conta {
     abstract void update();
 
     public  String toString(){
-        return this.id + " : " + this.cliente + " : " + this.saldo + " : " + this.getTipo();
+        return this.id + " : " + this.cliente.getNome() + " : " + this.saldo + " : " + this.getTipo();
     }
 
     public int getId() {
@@ -51,6 +102,6 @@ abstract class Conta {
     public void transferir(Conta destino, double valor){
         this.setSaldo(getSaldo() - valor);
         destino.depositar((valor));
-    }
+    }*/
 }
 
