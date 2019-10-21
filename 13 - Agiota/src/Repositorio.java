@@ -35,4 +35,7 @@ public class Repositorio <Dado> {
         return out;
     }
 
+    public boolean get(double v) {
+        return false;
+    }
 }

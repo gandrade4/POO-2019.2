@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Map;
 
 public class Agiota {
@@ -10,20 +11,26 @@ public class Agiota {
         super();
         this.saldoag = saldoag;
     }
+    public String toString() {
+        return "Meu saldo: " + getSaldoag();
+    }
 
-    public void emprestar(Cliente client, String chave, double valor) {
+    /*
+    public void addCli(String chave, String nome){
+        if (this.clientes.get(chave).equals()){
+            clientes.add(chave, nome);
+        }
+    }*/
+
+    public void emprestar(String chave, double valor) {
         if (this.clientes.get(chave) != null){
             if (getSaldoag() >= valor){
                 setSaldoag(getSaldoag() - valor);
-                client.setSaldo(getSaldo + valor);
+                clientes.get(Cliente.getSaldo() + valor);
+            }else {
+                throw new RuntimeException("Saldo insuficiente!");
             }
         }
-    }
-
-
-    public String toString() {
-
-        return super.toString();
     }
 
     public double getSaldoag() {
