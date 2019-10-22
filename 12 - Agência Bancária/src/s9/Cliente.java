@@ -9,55 +9,6 @@ public class Cliente {
 
     public  Cliente(){ }
     public Cliente(String id){
-
+        this.id = id;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*
-    int id;
-    String nome;
-    ArrayList<Conta> contas;
-
-
-    public Cliente (String id){
-        contas.add(new ContaCorrente(id, nome));
-        contas.add(new ContaPoupanca(id, nome));
-    }
-
-    public void addConta(Conta cc, Conta cp) {
-
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }*/
 }

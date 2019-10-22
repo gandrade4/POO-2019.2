@@ -8,59 +8,27 @@ abstract class Conta {
 
     public Conta(){ }
     public Conta(int id, String nomeCli){
+        this.nomeCli = nomeCli;
+        this.id = id;
     }
-    public void sacar(){
 
+    public  String toString(){
+        return this.id + " : " + this.nomeCli + " : " + this.saldo + " : " + this.tipoConta;
     }
-    public void depositar(){
 
+    public void sacar(double valor){
+        if (this.getSaldo() >= valor){
+            System.out.println("Sacando R$" + valor + "...");
+            this.setSaldo((float) (getSaldo() - valor));
+        }else{
+            System.out.println("Saldo insuficiente pra realizar saques!");
+        }
+    }
+    public void depositar(double valor){
+        this.setSaldo((float) (getSaldo() + valor));
     }
     public void tranferir(){
 
-    }
-    public abstract void update(){
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*
-    int id;
-    double saldo;
-    Cliente cliente;
-
-    abstract String getTipo();
-    abstract void update();
-
-    public  String toString(){
-        return this.id + " : " + this.cliente.getNome() + " : " + this.saldo + " : " + this.getTipo();
     }
 
     public int getId() {
@@ -71,37 +39,31 @@ abstract class Conta {
         this.id = id;
     }
 
-    public double getSaldo() {
+    public float getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(double saldo) {
+    public void setSaldo(float saldo) {
         this.saldo = saldo;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public String getNomeCli() {
+        return nomeCli;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setNomeCli(String nomeCli) {
+        this.nomeCli = nomeCli;
     }
 
-    public void depositar( double valor){
-        this.setSaldo(getSaldo() + valor);
+    public String getTipoConta() {
+        return tipoConta;
     }
 
-    public void sacar(int valor){
-        if (this.getSaldo() >= valor){
-            System.out.println("Sacando R$" + valor + "...");
-            this.setSaldo(getSaldo() - valor);
-        }else{
-            System.out.println("Saldo insuficiente pra realizar saques!");
-        }
+    public void setTipoConta(String tipoConta) {
+        this.tipoConta = tipoConta;
     }
-    public void transferir(Conta destino, double valor){
-        this.setSaldo(getSaldo() - valor);
-        destino.depositar((valor));
-    }*/
+
+    public abstract void update();
 }
+
 

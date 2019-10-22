@@ -5,6 +5,8 @@ class ContaCorrente extends Conta {
     private float tarifaMensal;
     public ContaCorrente(){ }
     public ContaCorrente(int id, String nomeCli){
+        super(id, nomeCli);
+        this.tipoConta = "CC";
         this.tarifaMensal = 20;
     }
 
@@ -12,50 +14,7 @@ class ContaCorrente extends Conta {
         this.saldo -= this.tarifaMensal;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*
-    public ContaCorrente(String nextid, String cliente) {
-
-    }
-
-    String getTipo() {
-        return "CC";
-    }
-
-    void update() {
+    public void update() {
         this.saldo -= 20;
-    }*/
+    }
 }

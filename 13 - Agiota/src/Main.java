@@ -24,7 +24,7 @@ public class Main {
                 }else if (ui[0].equals("history")){
                     System.out.println(agiota.transacoes);
                 }else if (ui[0].equals("give")){
-                    agiota.emprestar(ui[1], Integer.parseInt(ui[2]));
+                    agiota.emprestar(u0i[1], Integer.parseInt(ui[2]));
                     System.out.println("Dinheiros emprestados com sucesso!");
                 }else if (ui[0].equals("recieve")){
 
