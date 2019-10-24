@@ -8,7 +8,7 @@ public class ContaPoupanca extends Conta {
     public ContaPoupanca(int id, String nomeCli) {
         super(id, nomeCli);
         this.tipoConta = "CP";
-        this.redimento = 0.01;
+        this.redimento = 0.05;
     }
 
     public void atualizacaoMensal(){
@@ -16,6 +16,6 @@ public class ContaPoupanca extends Conta {
     }
 
     public void update() {
-        this.saldo += 0.01 * this.saldo;
+        this.saldo += this.redimento * this.saldo;
     }
 }

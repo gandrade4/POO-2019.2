@@ -23,7 +23,13 @@ public class Agencia {
         }return false;
     }
 
-
+    public boolean encontrarCli(int id){
+        for (Cliente c : this.clientes){
+            if (c.equals(id)){
+                return true;
+            }
+        }return false;
+    }
 
     public void addcliente(String id){
         Cliente cliente = new Cliente();

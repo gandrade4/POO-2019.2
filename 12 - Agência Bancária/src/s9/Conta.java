@@ -21,14 +21,16 @@ abstract class Conta {
             System.out.println("Sacando R$" + valor + "...");
             this.setSaldo((float) (getSaldo() - valor));
         }else{
-            System.out.println("Saldo insuficiente pra realizar saques!");
+            throw new RuntimeException("Saldo insuficiente!");
         }
     }
     public void depositar(double valor){
         this.setSaldo((float) (getSaldo() + valor));
     }
-    public void tranferir(){
 
+    public void transferir(Conta destino, double valor){
+        this.sacar(valor);
+        destino.depositar(valor);
     }
 
     public int getId() {

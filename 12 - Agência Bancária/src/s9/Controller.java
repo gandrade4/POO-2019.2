@@ -6,7 +6,7 @@ public class Controller {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Agencia bank = new Agencia();
-        System.out.println("addcliente [nome], sacar [n_id, n_valor], end");
+        System.out.println("addcliente [nome], sacar [n_id, n_valor], depositar [n_id, n_valor], tranferir [n_id1, n_id2 n_valor], status, update, end");
         while (true){
             try {
                 String line = scanner.nextLine();
@@ -27,10 +27,27 @@ public class Controller {
                     }else {
                         throw new RuntimeException("Não há clientes com o id fornecido, tente novamente!");
                     }
-                }else if (ui[0].equals("status")) {
+                }else if (ui[0].equals("transferir")){
+                    int nativa = Integer.parseInt(ui[1]);
+                    int destino = Integer.parseInt(ui[2]);
+                    if (bank.encontrarCli(nativa) == false){
+                        double valor = Double.parseDouble(ui[3]);
+                        Conta conta = bank.contas.get(destino);
+                        bank.contas.get(nativa).transferir(conta, valor);
+                        System.out.println("Tranferido com sucesso!");
+                    }else {
+                        throw new RuntimeException("Conta não encontrada!");
+                    }
+                }
+                else if (ui[0].equals("status")) {
                     for (int i = 0; i < bank.contas.size(); i++) {
                         System.out.println(bank.contas.get(i).toString());
                     }
+                }else if (ui[0].equals("update")){
+                    bank.update();
+                    System.out.println("Mais um mês se passou nesse amado banco...");
+                }else {
+                    System.out.println("Algo está errado, digite o comando novamente!");
                 }
             }catch(RuntimeException re) {
                 System.out.println(re.getMessage());
