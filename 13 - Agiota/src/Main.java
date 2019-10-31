@@ -15,7 +15,7 @@ public class Main {
                     agiota.setSaldoag(Integer.parseInt(ui[1]));
                     System.out.println("Preparadah!");
                 }else if (ui[0].equals("addcli")){
-                    agiota.clientes.add(ui[1], new Cliente(ui[2]));
+                    agiota.clientes.add(ui[1], new Cliente(ui[1]));
                     System.out.println("Cliente adicionado a lista de clientes com sucesso!");
                 }else if (ui[0].equals("show")){
                     System.out.println(agiota);
@@ -24,7 +24,7 @@ public class Main {
                 }else if (ui[0].equals("history")){
                     System.out.println(agiota.transacoes);
                 }else if (ui[0].equals("give")){
-                    agiota.emprestar(u0i[1], Integer.parseInt(ui[2]));
+                    agiota.emprestar(ui[1], Integer.parseInt(ui[2]));
                     System.out.println("Dinheiros emprestados com sucesso!");
                 }else if (ui[0].equals("recieve")){
 

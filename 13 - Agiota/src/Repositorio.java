@@ -19,7 +19,6 @@ public class Repositorio <Dado> {
             throw new RuntimeException(nametype + " " + key + " já existe");
         }
     }
-
     public Dado get(String key){
         Dado dado = dados.get(key);
         if(dado == null){
@@ -33,6 +32,15 @@ public class Repositorio <Dado> {
             out.add(dados.get(key));
         }
         return out;
+    }
+
+    public void remove(String key, Dado data){
+        Dado dado = dados.get(key);
+        if (dado != null){
+            dados.remove(key, data);
+        }else {
+            throw new RuntimeException(nametype + " " + key + " já está morto");
+        }
     }
 
     public boolean get(double v) {

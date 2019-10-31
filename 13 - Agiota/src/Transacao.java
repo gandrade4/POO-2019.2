@@ -3,7 +3,13 @@ public class Transacao {
     private double valor;
     private String clienteId;
 
-    @Override
+    public Transacao(int id, double valor, String clienteId){
+        super();
+        this.id = id;
+        this.valor = valor;
+        this.clienteId = clienteId;
+    }
+
     public String toString() {
         return this.getId() + ":" + this.getClienteId() + ":" + this.getValor();
     }

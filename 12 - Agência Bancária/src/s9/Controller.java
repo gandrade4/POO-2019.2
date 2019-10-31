@@ -30,7 +30,7 @@ public class Controller {
                 }else if (ui[0].equals("transferir")){
                     int nativa = Integer.parseInt(ui[1]);
                     int destino = Integer.parseInt(ui[2]);
-                    if (bank.encontrarCli(nativa) == false){
+                    if (!bank.encontrarCli(nativa)){
                         double valor = Double.parseDouble(ui[3]);
                         Conta conta = bank.contas.get(destino);
                         bank.contas.get(nativa).transferir(conta, valor);
@@ -41,7 +41,7 @@ public class Controller {
                 }
                 else if (ui[0].equals("status")) {
                     for (int i = 0; i < bank.contas.size(); i++) {
-                        System.out.println(bank.contas.get(i).toString());
+                        System.out.println(bank.contas.get(i));
                     }
                 }else if (ui[0].equals("update")){
                     bank.update();
