@@ -1,17 +1,17 @@
 public class Transacao {
     private int id;
-    private double valor;
     private String clienteId;
+    private double valor;
 
-    public Transacao(int id, double valor, String clienteId){
-        super();
+    public Transacao(int id, String clienteId, double valor){
+
         this.id = id;
-        this.valor = valor;
         this.clienteId = clienteId;
+        this.valor = valor;
     }
 
     public String toString() {
-        return this.getId() + ":" + this.getClienteId() + ":" + this.getValor();
+        return this.getId() + " : " + this.getClienteId() + " : " + this.getValor();
     }
 
     public int getId() {

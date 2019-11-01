@@ -22,10 +22,14 @@ public class Main {
                 }else if (ui[0].equals("showcli")){
                     System.out.println(agiota.clientes.get(ui[1]));
                 }else if (ui[0].equals("history")){
-                    System.out.println(agiota.transacoes);
+                    System.out.println(agiota.transacoes.getAll());
                 }else if (ui[0].equals("give")){
                     agiota.emprestar(ui[1], Integer.parseInt(ui[2]));
                     System.out.println("Dinheiros emprestados com sucesso!");
+                }else if (ui[0].equals("kill")) {
+                    agiota.clientes.remove(ui[1]);
+                    agiota.transacoes.remove(ui[1]);
+                    System.out.println("Eliminade com sucesso!");
                 }else if (ui[0].equals("recieve")){
 
                 }else {

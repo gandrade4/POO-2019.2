@@ -4,37 +4,35 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Cliente {
-    private String key;
     private String nome;
-    private static double saldo;
+    private double saldo;
     Repositorio<Transacao> transacoes;
 
     public Cliente(String key, String nome) {
         super();
-        this.key = key;
         this.nome = nome;
         this.saldo = 0;
+        transacoes = new Repositorio<Transacao>("Transacao");
     }
-
-    public Cliente(String s) {
-
-    }
+    public Cliente(String s) {    }
 
     public String toString(){
-        return this.getKey() + ":" + this.getNome() + ":" + this.getSaldo();
+        return getNome() + ":" + this.getSaldo();
     }
 
-    public static double getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-    public String getKey() {
-        return key;
+
+    public void receber(double saldo){
+        this.saldo += saldo;
     }
+
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
 

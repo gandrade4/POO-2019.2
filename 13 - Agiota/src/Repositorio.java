@@ -34,10 +34,10 @@ public class Repositorio <Dado> {
         return out;
     }
 
-    public void remove(String key, Dado data){
+    public void remove(String key){
         Dado dado = dados.get(key);
         if (dado != null){
-            dados.remove(key, data);
+            dados.remove(key);
         }else {
             throw new RuntimeException(nametype + " " + key + " já está morto");
         }
