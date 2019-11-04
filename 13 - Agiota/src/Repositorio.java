@@ -6,6 +6,7 @@ public class Repositorio <Dado> {
     Map<String, Dado> dados;
     String nametype;
 
+
     public Repositorio(String nametype){
         dados = new TreeMap<String, Dado>();
         this.nametype = nametype;
@@ -16,13 +17,24 @@ public class Repositorio <Dado> {
         if (dado == null){
             dados.put(key, data);
         }else {
-            throw new RuntimeException(nametype + " " + key + " já existe");
+            throw new RuntimeException(nametype + " " + key + " já existe!");
         }
     }
+    public void emprestar(String key, Dado data){
+        Dado dado = dados.get(key);
+        System.out.println(dados);
+        dados.put(key, data);
+    }
+    public void receber(String key, Dado data){
+        Dado dado = dados.get(key);
+        System.out.println(dados);
+        dados.put(key, data);
+    }
+
     public Dado get(String key){
         Dado dado = dados.get(key);
         if(dado == null){
-            throw new RuntimeException(nametype + " " + key + " não existe");
+            throw new RuntimeException(nametype + " " + key + " não existe!");
         }
         return dado;
     }
@@ -39,11 +51,7 @@ public class Repositorio <Dado> {
         if (dado != null){
             dados.remove(key);
         }else {
-            throw new RuntimeException(nametype + " " + key + " já está morto");
+            throw new RuntimeException(nametype + " " + key + " já está morto!");
         }
-    }
-
-    public boolean get(double v) {
-        return false;
     }
 }
