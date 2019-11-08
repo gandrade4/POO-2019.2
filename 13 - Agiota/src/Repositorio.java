@@ -22,12 +22,10 @@ public class Repositorio <Dado> {
     }
     public void emprestar(String key, Dado data){
         Dado dado = dados.get(key);
-        System.out.println(dados);
         dados.put(key, data);
     }
     public void receber(String key, Dado data){
         Dado dado = dados.get(key);
-        System.out.println(dados);
         dados.put(key, data);
     }
 

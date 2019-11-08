@@ -1,7 +1,7 @@
 public class Historico {
-    int idTrans;
-    String idCliente;
-    double input;
+    private int idTrans;
+    private String idCliente;
+    private double input;
 
     public Historico(int idTrans, String idCliente, double input) {
         this.idTrans = idTrans;
@@ -11,6 +11,6 @@ public class Historico {
 
     @Override
     public String toString() {
-        return "\n" + idTrans + ": " + idCliente + ": " + input;
+        return idTrans + ": " + idCliente + ": " + input;
     }
 }

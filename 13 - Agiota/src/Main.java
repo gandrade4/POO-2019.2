@@ -29,7 +29,7 @@ public class Main {
                     System.out.println("Dinheiros emprestados com sucesso!");
                 }else if (ui[0].equals("kill")) {
                     agiota.clientes.remove(ui[1]);
-                    agiota.transacoes.remove(ui[1]);
+                    agiota.historicos.remove(ui[1]);
                     System.out.println("Bitch better have some money!");
                 }else if (ui[0].equals("receive")){
                     agiota.receber(ui[1], Integer.parseInt(ui[2]));
