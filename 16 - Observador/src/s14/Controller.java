@@ -1,66 +1,83 @@
 package s14;
 
-import java.util.Observable;
-import java.util.Observer;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
-class RevistaInformatica extends Observable {
+enum EventType{
+    add, rm;
+}
 
-    private int edicao;
+interface Observer<V>{
+    public void update(EventType type, V value);
+}
 
-    public void setNovaEdicao(int novaEdicao) {
-        this.edicao = novaEdicao;
-
-        setChanged();
-        notifyObservers();
+class Repository<K, V>{
+    String typename;
+    Map<K, V> data = new TreeMap<K, V>();
+    List<Observer<V>> observers;
+    public Repository(String typename) {
+        this.typename = typename;
+        this.observers = new ArrayList<Observer<V>>();
+    }
+    public void attach(Observer<V> observer) {
+        this.observers.add(observer);
     }
 
-    public int getEdicao() {
-        return this.edicao;
+    boolean exists(K k) {
+        return this.data.get(k) != null;
     }
+
+    void add(K k, V v) {
+        V value = this.data.get(k);
+        if(value != null)
+            throw new RuntimeException(this.typename + " " + k + " ja existe");
+        this.data.put(k, v);
+        notity(EventType.add, v);
+    }
+
+    private void notity(EventType type, V v) {
+        for(Observer<V> observer : observers)
+            observer.update(type, v);
+
+    }
+
+    V get(K k) {
+        V value = this.data.get(k);
+        if(value == null)
+            throw new RuntimeException(this.typename + " " + k + " nao existe");
+        return value;
+    }
+
+    V remove(K k) {
+        V value = this.data.remove(k);
+        if(value == null)
+            throw new RuntimeException(this.typename + " " + k + " nao existe");
+        return value;
+    }
+    Collection<V> getAll(){
+        return this.data.values();
+    }
+    public String toString() {
+        String saida = "[ ";
+        for(K key : this.data.keySet())
+            saida += key + " ";
+        return saida + "]";
+    }
+
+
 
     public static void main(String[] args) {
-        //poderia receber a nova edicao atraves de um recurso externo
-        int novaEdicao = 3;
-        RevistaInformatica revistaInformatica = new RevistaInformatica();
-        Assinante1 assinante1 = new Assinante1(revistaInformatica);
-        Assinante2 assinante2 = new Assinante2(revistaInformatica);
-        revistaInformatica.addObserver(new Observer() {
+        Repository<Integer, String> numeros = new Repository<Integer, String>("numero");
+        numeros.attach(new Observer<String>(){
             @Override
-            public void update(Observable o, Object arg) {
-                System.out.println("estou pendurado");
-            }
-        });
-
-        revistaInformatica.setNovaEdicao(novaEdicao);
-        revistaInformatica.setNovaEdicao(4);
-        revistaInformatica.setNovaEdicao(5);
-        revistaInformatica.setNovaEdicao(6);
-    }
-}
-
-class Assinante1 implements Observer {
-    Observable revistaInformatica;
-    int edicaoNovaRevista;
-    public Assinante1(Observable revistaInformatica) {
-        this.revistaInformatica = revistaInformatica;
-        revistaInformatica.addObserver(this);
-    }
-    @Override
-    public void update(Observable revistaInfSubject, Object arg1) {
-        if (revistaInfSubject instanceof RevistaInformatica) {
-            System.out.println("To te vendo");
-        }
-    }
-}
-
-class Assinante2 implements Observer {
-    public Assinante2(Observable revistaInformatica) {
-        revistaInformatica.addObserver(this);
-    }
-    @Override
-    public void update(Observable revistaInfSubject, Object arg1) {
-        if (revistaInfSubject instanceof RevistaInformatica) {
-            System.out.println("oi");
-        }
+            public void update(EventType type, String value) {
+                if(type == EventType.add)
+                    System.out.println("adicionaram o " + value);
+            }});
+        numeros.add(4, "quatro");
+        numeros.add(5, "cinco");
     }
 }

@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Agiota agiota = new Agiota(0);
+        Transacao transacao;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Comandos: end, cash _quantity, addcli _name, show, showcli _name, history, give _quantity, kill _name, receive _name _quantity");
 
@@ -28,12 +29,17 @@ public class Main {
                     agiota.emprestar(ui[1], Integer.parseInt(ui[2]));
                     System.out.println("Dinheiros emprestados com sucesso!");
                 }else if (ui[0].equals("kill")) {
+                    for (int i = 0; i < agiota.historicos.size(); i++){
+                        if (ui[1].equals(agiota.historicos.get(i).getIdCliente())){
+                            agiota.historicos.remove(i);
+                            i--;
+                        }
+                    }
                     agiota.clientes.remove(ui[1]);
-                    agiota.historicos.remove(ui[1]);
-                    System.out.println("Bitch better have some money!");
+                    System.out.println("BBHMM");
                 }else if (ui[0].equals("receive")){
                     agiota.receber(ui[1], Integer.parseInt(ui[2]));
-                    System.out.println("Bitch now I have my money, c ya!");
+                    System.out.println("Now I have my money, c ya!");
                 }else {
                     System.out.println("Comando inválido amadah!");
                 }
@@ -43,3 +49,17 @@ public class Main {
         }
     }
 }
+
+/*
+
+cash 500
+addcli gabs
+addcli let
+give gabs 50
+give let 100
+give let 20
+
+history
+kill gabs
+history
+ */
