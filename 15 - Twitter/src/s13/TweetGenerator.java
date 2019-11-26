@@ -1,13 +1,10 @@
 package s13;
 
-import java.util.ServiceConfigurationError;
-
 public class TweetGenerator {
     private Repository<String, User> rUser;
     public TweetGenerator(){
-        rUser = new Repository<>(String, User)("Usuario");
+        rUser = new Repository<String, User>("Usuario");
     }
-
     public void addUser(String login){
         rUser.add(login, new User(login));
     }

@@ -47,9 +47,9 @@ public class User {
         return saida;
     }
 
-    public darLike(int id){
+    public void darLike(int id){
         for (Tweet tweet : this.timeline)
-            if (tweet.id == id)
+            if (tweet.idTw == id)
                 tweet.darLike(this.login);
     }
 }
