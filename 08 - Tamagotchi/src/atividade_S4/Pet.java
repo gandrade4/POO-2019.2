@@ -19,12 +19,11 @@ public class Pet {
 
     }
 
-    @Override
     public String toString() {
         return "Pet{" +
                 "Nome = '" + nome + '\'' +
                 ", Saúde = " + saude +
-                ", Cap. Estômago = " + estomago +
+                ", Capacidade do Estômago = " + estomago +
                 ", Vida = " + coracao.vida +
                 '}';
     }
@@ -38,17 +37,6 @@ public class Pet {
     }
 
     public void comer(double valor) {
-        /*if (coracao.vida != 0){
-            System.out.println("Comendo..");
-            estomago += valor;
-            saude += valor / 2;
-            if (valor > estomago){
-                saude -= valor / 2;
-                System.out.println("Pet empasinado");
-            }
-        } else{
-            System.out.println("Sem vida!");
-        }*/
         if (valor > estomago) {
             saude -= valor / 2;
             System.out.println("Pet empasinado");
@@ -61,4 +49,14 @@ public class Pet {
             saude += valor / 2;
         }
     }
+
+    public void brincar(double valor){
+        if (coracao.vida <= 0 && saude < saudeMax){
+            saude += valor / 2;
+        } else {
+            System.out.println("Pet cansadinhe");
+        }
+    }
+
+
 }
