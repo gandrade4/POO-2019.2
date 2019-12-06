@@ -1,55 +1,33 @@
 package s12;
 
-import java.util.Map;
-
-class Paciente{
-    String id;
-    Map<String, Medico> medicos;
-    void addMedico(Medico medico) {
-        Medico pmedico = medicos.get(medico.id);
-        if(pmedico != null)
-            return;
-        medicos.put(medico.id, medico);
-        medico.addPaciente(this);
-    }
-    void delMedico(Medico medico){
-        Medico pmedico = medicos.get(medico.id);
-        if (pmedico != null){
-            return;
-        }
-        medicos.remove(medico.id);
-        medico.delPaciente(this);
-    }
-
-}
-class Medico{
-    String id;
-    Map<String, Paciente> pacientes;
-    void addPaciente(Paciente paciente) {
-        Paciente mpaciente = pacientes.get(paciente.id);
-        if(mpaciente != null)
-            return;
-        pacientes.put(paciente.id, paciente);
-        paciente.addMedico(this);
-    }
-
-    void delPaciente(Paciente paciente){
-        Paciente mpaciente = pacientes.get(paciente.id);
-        if (mpaciente != null){
-            return;
-        }
-        pacientes.remove(paciente.id);
-        paciente.delMedico(this);
-    }
-}
-class Hospital{
-    Map<String, Paciente> pacientes;
-    Map<String, Medico> medicos;
-
-    void removerPaciente (String id){
-
-    }
-}
+import java.util.Scanner;
 
 public class Controller {
+    public static void main(String[] args) {
+        Hospital hospital = new Hospital();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Comandos: addMed _nome _tipo, showHosp, showMed _nome, remove _nome");
+
+        while (true){
+            String line = scanner.nextLine();
+            String[] ui = line.split(" ");
+            try {
+                if (ui[0].equals("end")){
+                    break;
+                }else if (ui[0].equals("addMed")){
+                    hospital.medicos.add(ui[1], new Medico(ui[1], ui[2]));
+                    System.out.println("Adicionado ao sistema!");
+                }else if (ui[0].equals("showHosp")){
+                    System.out.println(hospital);
+                }else if (ui[0].equals("showMed")){
+                    System.out.println(hospital.medicos.get(ui[1]));
+                }else if (ui[0].equals("remove")){
+                    hospital.medicos.remove(ui[1]);
+                    System.out.println("Removido do sistema!");
+                }
+            }catch (RuntimeException re){
+                System.out.println(re.getMessage());
+            }
+        }
+    }
 }
