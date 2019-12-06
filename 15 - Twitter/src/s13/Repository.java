@@ -17,25 +17,22 @@ public class Repository <K, V> {
 
     void add(K k, V t) {
         V value = this.data.get(k);
-        if(value == null){
-            this.data.put(k, t);
-        }else {
-
-            throw new RuntimeException(this.typename + " " + k + " já existe!");
-        }
+        if(value != null)
+            throw new RuntimeException(this.typename + " " + k + " ja existe");
+        this.data.put(k, t);
     }
 
     V get(K k) {
         V value = this.data.get(k);
         if(value == null)
-            throw new RuntimeException(this.typename + " " + k + " não existe!");
+            throw new RuntimeException(this.typename + " " + k + " nao existe");
         return value;
     }
 
     V remove(K k) {
         V value = this.data.remove(k);
         if(value == null)
-            throw new RuntimeException(this.typename + " " + k + " não existe!");
+            throw new RuntimeException(this.typename + " " + k + " nao existe");
         return value;
     }
     Collection<V> getAll(){

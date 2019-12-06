@@ -1,13 +1,16 @@
 package s13;
 
-public class TweetGenerator {
+public class Twitter {
     private Repository<String, User> rUser;
-    public TweetGenerator(){
+
+    public Twitter(){
         rUser = new Repository<String, User>("Usuario");
     }
+
     public void addUser(String login){
         rUser.add(login, new User(login));
     }
+
     public String toString(){
         String saida = "";
         for (User user : this.rUser.getAll())
