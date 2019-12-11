@@ -1,4 +1,6 @@
+import java.security.Key;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -29,15 +31,7 @@ public class Repositorio <Dado> {
         }
         return true;
     }
-    /*public void emprestar(String key, Dado data){
-        Dado dado = dados.get(key);
-        dados.put(key, data);
-    }
-    public void receber(String key, Dado data){
-        Dado dado = dados.get(key);
-        dados.put(key, data);
-    }
-    */
+
     public Dado get(String key){
         Dado dado = dados.get(key);
         if(dado == null){
@@ -53,12 +47,31 @@ public class Repositorio <Dado> {
         return out;
     }
 
-    public void remove(Discp key){
+    public void removeDiscp(Discp key){
+        Dado dado = dados.get(key);
+        if (dado != null){
+            dados.remove(key.getIdDiscip());
+        }else {
+            throw new RuntimeException(nametype + " " + key + " já foi removida!");
+        }
+    }
+
+    public void removeAluno(Aluno key){
+        Dado dado = dados.get(key);
+        if (dado != null){
+            dados.remove(key.getIdAluno());
+        }else {
+            throw new RuntimeException(nametype + " " + key + " já foi removido!");
+        }
+    }
+
+    public void remove(String key){
         Dado dado = dados.get(key);
         if (dado != null){
             dados.remove(key);
         }else {
-            throw new RuntimeException(nametype + " " + key + " já está morto!");
+            throw new RuntimeException(nametype + " " + key + " já foi removido!");
         }
     }
+
 }
