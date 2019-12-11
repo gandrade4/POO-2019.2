@@ -14,13 +14,22 @@ public class Repositorio <Dado> {
 
     public void add(String key, Dado data){
         Dado dado = dados.get(key);
-        if (dado == null){
+        dados.put(key, data);
+        /*if (dado == null){
             dados.put(key, data);
         }else {
             throw new RuntimeException(nametype + " " + key + " já existe!");
-        }
+        }*/
     }
-    public void emprestar(String key, Dado data){
+
+    public boolean checar(String key, Dado data){
+        Dado dado = dados.get(key);
+        if (dado == null){
+            return false;
+        }
+        return true;
+    }
+    /*public void emprestar(String key, Dado data){
         Dado dado = dados.get(key);
         dados.put(key, data);
     }
@@ -28,7 +37,7 @@ public class Repositorio <Dado> {
         Dado dado = dados.get(key);
         dados.put(key, data);
     }
-
+    */
     public Dado get(String key){
         Dado dado = dados.get(key);
         if(dado == null){
@@ -44,7 +53,7 @@ public class Repositorio <Dado> {
         return out;
     }
 
-    public void remove(String key){
+    public void remove(Discp key){
         Dado dado = dados.get(key);
         if (dado != null){
             dados.remove(key);

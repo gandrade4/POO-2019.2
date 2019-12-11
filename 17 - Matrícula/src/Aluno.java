@@ -1,23 +1,22 @@
-import java.util.List;
-
 public class Aluno {
     private String idAluno;
     Repositorio<Discp> discps;
 
     public Aluno(String idAluno){
         this.idAluno = idAluno;
+        this.discps = new Repositorio<>("Disciplina");
     }
 
     public void matricular(Discp discp){
-        if (this.idAluno != null && this.discps != null){
-            discps.add(discps.get(id));
+        if (!this.discps.checar(discp.idDiscip, discp)){
+            this.discps.add(discp.idDiscip, discp);
         }
-    public void desmatricular(String idAluno){
-
     }
 
-    public List<Discp> getDiscps() {
-        return discps;
+    public void desmatricular(Discp discp){
+        if (!this.discps.checar(discp.idDiscip, discp)){
+            this.discps.remove(discp);
+        }
     }
 
     public String getIdAluno() {
