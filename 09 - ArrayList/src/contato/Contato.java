@@ -11,17 +11,24 @@ public class Contato {
         this.telefones = new ArrayList<Telefone>();
     }
 
-    public void addFone(String id, String fone){
-        this.telefones.add(new Telefone(telefones, id));
+    public String toString(){
+        return this.nome + "" + this.getTelefones();
     }
 
-    public String getNome() {
-        return nome;
+    public void addFone(String id, String telefone){
+        this.telefones.add(new Telefone(id, telefone));
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void remover(String id){
+        for(int i = 0; i < telefones.size(); i++) {
+            if (telefones.get(i).getId().equals(id)) {
+                this.telefones.remove(i);
+                System.out.println("Removido com sucesso!");
+                i--;
+            }
+        }
     }
+
 
     public ArrayList<Telefone> getTelefones() {
         return telefones;
