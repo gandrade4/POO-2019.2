@@ -5,11 +5,11 @@ import java.util.List;
 
 public class User {
     static int nextId = 0;
-    String login;
-    Repository<String, User> following;
-    Repository<String, User> followers;
-    List<Tweet> timeline;
-    int unRead = 0;
+    private String login;
+    private Repository<String, User> following;
+    private Repository<String, User> followers;
+    private List<Tweet> timeline;
+    private int unRead = 0;
 
     public User(String login){
         this.login = login;
@@ -26,7 +26,14 @@ public class User {
         if (following.exists(user.login))
             return;
         following.add(user.login, user);
-        user.following.add(this.login, this);
+        user.followers.add(this.login, this);
+    }
+
+    public void DeixarDeSeguir(User user){
+        if (following.exists(user.login))
+            return;
+        followers.remove(user.login);
+        user.following.remove(this.login);
     }
 
     public void twittar(String msg){

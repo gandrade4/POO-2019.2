@@ -16,7 +16,7 @@ public class Tweet {
 
     @Override
     public String toString() {
-        String saida = idTw + ":" + username + ":" + msg + " [";
+        String saida ="[" + idTw + " : " + username + " : (" + msg + ") [ ";
         for (String user : likes)
             saida += user + " ";
         return saida + "]";

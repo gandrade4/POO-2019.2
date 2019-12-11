@@ -4,7 +4,7 @@ public class Twitter {
     private Repository<String, User> rUser;
 
     public Twitter(){
-        rUser = new Repository<String, User>("Usuario");
+        rUser = new Repository<String, User>("Usuário");
     }
 
     public void addUser(String login){
